@@ -3,7 +3,7 @@ import time as ti
 import pygame as pg
 import sys as s
 from objects import *
-#初始化↓
+#初始化↓ 
 cube_x=50;cube_y=450
 k=0
 pg.init()
