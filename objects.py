@@ -1,5 +1,5 @@
 import pygame as pg
-#动画精灵↓
+#动画精灵↓ 
 class Shape(pg.sprite.Sprite):
     def __init__(self,image_file,location):
         pg.sprite.Sprite.__init__(self)
