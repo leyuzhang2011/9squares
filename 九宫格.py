@@ -1,5 +1,5 @@
 #导入↓
-import time as  ti
+import time as ti
 import pygame as pg
 import sys as s
 from objects import *
