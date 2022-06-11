@@ -9,3 +9,14 @@ class Shape(pg.sprite.Sprite):
     def move(self,x,y):
         #移动
         self.rect.left,self.rect.top=x,y
+
+class Blue(Shape):
+    def __init__(self,image_file,location):
+        Shape.__init__(self,image_file,location)
+        self.m=0
+        self.positions=[]
+    def place(self,positions):
+        self.positions=positions
+        self.move(self.positions[self.m][0],self.positions[self.m][1])
+        self.m+=1
+        self.m=self.m%len(self.positions)

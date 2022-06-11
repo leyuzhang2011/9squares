@@ -33,16 +33,14 @@ screen.blit(cube.image,cube.rect)
 pg.display.flip()
 #感应（按下关闭）↓
 running=True
-m=0;k=0
+k=0
 while running:
     draw()
     if LEVEL==2:
         k+=1
         if k%40==0:
             positions=[[250,450],[250,250],[250,50],[250,250]]
-            blue.move(positions[m][0],positions[m][1])
-            m+=1
-            m= m%len(positions)
+            blue.place(positions)
 
     if (collision())and(LEVEL==1):
         LEVEL=2
@@ -53,7 +51,7 @@ while running:
         cube_x=50;cube_y=450
         cube.move(cube_x,cube_y)
         my_ball.move(450,50)
-        blue=Shape("blue cube.png",[250,250])
+        blue=Blue("blue cube.png",[250,250])
         shapes.append(blue)
     for event in pg.event.get():
         if event.type==pg.QUIT:
