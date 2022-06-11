@@ -9,5 +9,3 @@ class Shape(pg.sprite.Sprite):
     def move(self,x,y):
         #移动
         self.rect.left,self.rect.top=x,y
-    def bouncemove(self,direction):
-        pass

@@ -5,7 +5,6 @@ import sys as s
 from objects import *
 #初始化↓ 
 cube_x=50;cube_y=450
-k=0
 pg.init()
 screen=pg.display.set_mode([650,650]);screen.fill([255,255,255])
 shapes=[]
@@ -34,14 +33,22 @@ screen.blit(cube.image,cube.rect)
 pg.display.flip()
 #感应（按下关闭）↓
 running=True
+m=0;k=0
 while running:
     draw()
-    #if (LEVEL==2)and(k%100==0):blue.bouncemove(0,650,200,450)
+    if LEVEL==2:
+        k+=1
+        if k%40==0:
+            positions=[[250,450],[250,250],[250,50],[250,250]]
+            blue.move(positions[m][0],positions[m][1])
+            m+=1
+            m= m%len(positions)
+
     if (collision())and(LEVEL==1):
+        LEVEL=2
         win=pg.image.load('WIN.png')
         screen.blit(win,[75,250])
         pg.display.flip()
-        LEVEL=2
         ti.sleep(0.3)
         cube_x=50;cube_y=450
         cube.move(cube_x,cube_y)
@@ -64,5 +71,4 @@ while running:
             elif (event.key==pg.K_LEFT)and(cube_x>=250):
                 cube_x-=200
                 cube.move(cube_x,cube_y)
-    k+=1
 pg.quit()
