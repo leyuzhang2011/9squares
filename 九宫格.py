@@ -3,7 +3,7 @@ import time as ti
 import pygame as pg 
 import sys as s
 from objects import *
-#初始化↓ 
+#初始化↓ 不不不
 cube_x=50;cube_y=450
 pg.init()
 screen=pg.display.set_mode([650,650]);screen.fill([255,255,255])
