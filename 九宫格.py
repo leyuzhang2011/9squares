@@ -1,6 +1,6 @@
 #导入↓
 import time as ti
-import pygame as pg
+import pygame as pg 
 import sys as s
 from objects import *
 #初始化↓ 
